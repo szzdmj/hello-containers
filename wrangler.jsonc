@@ -10,7 +10,7 @@
   "containers": [
     {
       "class_name": "MyContainer",
-      "image": "./Dockerfile",
+      "image": "szapp.szzd.me/up/shenzhou-app:tag",
       "max_instances": 10,
       "name": "hello-containers"
     }
