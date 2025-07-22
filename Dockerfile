@@ -1,23 +1,11 @@
-# syntax=docker/dockerfile:1
+FROM dunglas/frankenphp:static-builder-gnu
 
-FROM golang:1.24-alpine AS build
+# Copy your app
+WORKDIR /go/src/app/dist/app
+COPY Static_Creation .
 
-# Set destination for COPY
-WORKDIR /app
-
-# Download any Go modules
-COPY container_src/go.mod ./
-RUN go mod download
-
-# Copy container source code
-COPY container_src/*.go ./
-
-# Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /server
-
-FROM scratch
-COPY --from=build /server /server
-EXPOSE 8080
-
-# Run
-CMD ["/server"]
+# Build the static binary
+WORKDIR /go/src/app/
+RUN EMBED=dist/app/ \
+    XCADDY_ARGS="--with github.com/caddyserver/cache-handler --with github.com/caddy-dns/cloudflare" \
+    ./build-static.sh
