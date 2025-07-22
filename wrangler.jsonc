@@ -10,7 +10,7 @@
   "containers": [
     {
       "class_name": "MyContainer",
-      "image": "szapp.szzd.me/up/shenzhou-app:tag",
+      "image": "./Dockerfile",
       "max_instances": 10,
       "name": "hello-containers"
     }
@@ -30,3 +30,4 @@
     }
   ]
 }
+
