@@ -1,4 +1,4 @@
-FROM dunglas/frankenphp:static-builder-gnu
+FROM szzdmj/frankenphp:static-builder-gnu
 
 # Copy your app
 WORKDIR /go/src/app/dist/app
