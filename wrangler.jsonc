@@ -4,12 +4,11 @@
   "main": "src/index.ts",
   "main_type": "modules", // optional; can be removed
   "compatibility_flags": ["nodejs_compat"],
-  // Define your container bindings here
-  "services": [
-    {
-      "binding": "MY_CONTAINER", // You can name this anything (used in code)
-      "service": "shenzhou-appp",   // Logical name for your container
-      "image": "szapp.szzd.me/up/shenzhou-app:tag" // Use your actual image
+
+  "containers": {
+    "MY_CONTAINER": { // Binding name (used in code)
+      "service": "shenzhou-appp", // Logical name for your container
+      "image": "szapp.szzd.me/up/shenzhou-app:tag" // Replace with actual image tag
     }
-   ]
+  }
 }
