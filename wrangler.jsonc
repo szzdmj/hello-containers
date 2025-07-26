@@ -1,8 +1,14 @@
-"containers": [
+{
+  "name": "MyContainer",
+  "compatibility_date": "2025-07-25",
+  "main": "src/index.ts",
+
+  // Define your container bindings here
+  "services": [
     {
-      "class_name": "MyContainer",
-      "image": "szapp.szzd.me/up/shenzhou-app:tag",
-      "max_instances": 10,
-      "name": "hello-containers"
+      "binding": "MY_CONTAINER", // You can name this anything (used in code)
+      "service": "frankenphp",   // Logical name for your container
+      "image": "ghcr.io/your-username/frankenphp:latest" // Use your actual image
     }
-  ],
+  ]
+}
