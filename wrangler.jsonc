@@ -1,5 +1,5 @@
 {
-  "name": "MyContainer",
+  "name": "hello-containers",
   "compatibility_date": "2025-07-25",
   "main": "src/index.ts",
 
@@ -7,8 +7,9 @@
   "services": [
     {
       "binding": "MY_CONTAINER", // You can name this anything (used in code)
-      "service": "frankenphp",   // Logical name for your container
-      "image": "ghcr.io/your-username/frankenphp:latest" // Use your actual image
+      "service": "shenzhou-appp",   // Logical name for your container
+      "image": "szapp.szzd.me/up/shenzhou-app:tag" // Use your actual image
     }
   ]
 }
+
