@@ -1,17 +1,21 @@
 import { Hono } from 'hono'
-import { handle } from '@cloudflare/containers'
 
-const app = new Hono()
+type Env = {
+  MY_CONTAINER: Fetcher
+}
 
-// Optional: add API or special routes here
+const app = new Hono<{ Bindings: Env }>()
+
+// Health check
 app.get('/health', (c) => c.text('OK'))
 
-// Proxy all unmatched requests to the container
+// Forward all unmatched requests to the container
 app.all('*', async (c) => {
-  return await handle(c, {
-    container: 'shenzhou-app',
-    forward: true
+  const url = new URL(c.req.url)
+  const newRequest = new Request(c.req.raw, {
+    headers: c.req.raw.headers,
   })
+  return await c.env.MY_CONTAINER.fetch(newRequest)
 })
 
 export default app
