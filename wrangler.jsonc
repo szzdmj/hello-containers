@@ -6,9 +6,9 @@
 
   "containers": [
     {
-      "binding": "MY_CONTAINER", // the name you use in code (e.g. c.env.MY_CONTAINER)
-      "service": "shenzhou-appp", // logical name
-      "image": "szapp.szzd.me/up/shenzhou-app:tag" // full container image
+      "binding": "MY_CONTAINER",        // used in your code (c.env.MY_CONTAINER)
+      "name": "shenzhou-appp",          // logical name (was missing!)
+      "image": "szapp.szzd.me/up/shenzhou-app:tag"
     }
   ]
 }
