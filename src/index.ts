@@ -9,7 +9,7 @@ app.get('/health', (c) => c.text('OK'))
 // Proxy all unmatched requests to the container
 app.all('*', async (c) => {
   return await handle(c, {
-    container: 'MyContainer',
+    container: 'shenzhou-app',
     forward: true
   })
 })
