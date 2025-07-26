@@ -1,7 +1,7 @@
 {
   "name": "hello-containers",
   "compatibility_date": "2025-07-25",
-  "main": "src/index.ts",
+  "main": "src/index.ts",  // 确保引用了正确的主脚本
   "kv_namespaces": [
     {
       "binding": "KV",
@@ -13,7 +13,7 @@
   },
   "containers": [
     {
-      "name": "MY_CONTAINER",  // 与 Worker 中的 env 绑定一致
+      "name": "hello-containers",  // 与 Worker 中的 env 绑定一致
       "service": "shenzhou-app",  // Cloudflare Container 服务名称
       "image": "szapp.szzd.me/up/shenzhou-app:tag"  // 你的容器镜像
     }
