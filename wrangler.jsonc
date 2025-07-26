@@ -11,10 +11,10 @@
   "assets": {
     "directory": "./src"  // 修改为存在的目录
   },
-  "services": [
+"containers": [
     {
-      "binding": "MY_CONTAINER",
-      "service": "shenzhou-appp",
+      "name": "MY_CONTAINER",  // Must match the Env binding
+      "service": "shenzhou-app",
       "image": "szapp.szzd.me/up/shenzhou-app:tag"
     }
   ]
