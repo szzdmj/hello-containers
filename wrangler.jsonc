@@ -13,8 +13,7 @@
     }
   ],
   "assets": {
-    "directory": "./dist",
-    "exclude": ["node_modules/workerd/bin/workerd"]
+    "directory": "./src"  // 修改为存在的目录
   },
   "services": [
     {
