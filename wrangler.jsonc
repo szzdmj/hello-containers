@@ -22,7 +22,7 @@
 
   // 静态资产配置
   "assets": {
-    "directory": "./",  // 构建输出目录
+    "directory": "./src",  // 构建输出目录
     "include": ["Caddyfile"]  // 包含 Caddyfile
   },
 
