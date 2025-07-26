@@ -31,4 +31,10 @@
       "image": "szapp.szzd.me/up/shenzhou-app:tag"
     }
   ]
+{
+  "assets": {
+    "directory": "./dist"  // Replace with your actual build output directory
+  }
+}
+
 }
