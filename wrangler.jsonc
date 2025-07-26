@@ -1,11 +1,7 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hello-containers",
+  "compatibility_date": "2025-07-25",
   "main": "src/index.ts",
-  "compatibility_date": "2025-07-26",
-  "observability": {
-    "enabled": true
-  },
   "kv_namespaces": [
     {
       "binding": "KV",
