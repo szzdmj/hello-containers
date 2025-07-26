@@ -2,7 +2,8 @@
   "name": "hello-containers",
   "compatibility_date": "2025-07-25",
   "main": "src/index.ts",
-
+  "main_type": "modules", // optional; can be removed
+  "compatibility_flags": ["nodejs_compat"],
   // Define your container bindings here
   "services": [
     {
@@ -10,6 +11,7 @@
       "service": "shenzhou-appp",   // Logical name for your container
       "image": "szapp.szzd.me/up/shenzhou-app:tag" // Use your actual image
     }
-  ]
+  
+ 
+  }
 }
-
