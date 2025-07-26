@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npx wrangler deploy",  // Add this line for TypeScript build
+    "build": "tsc", 
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
