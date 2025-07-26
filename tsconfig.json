@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",  // This ensures files go into the 'dist' folder
     "target": "es2021",
     "lib": ["es2021"],
     "jsx": "react-jsx",
@@ -9,7 +10,7 @@
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": false,
-    "noEmit": false,  // Change this to false to allow emitting output files
+    "noEmit": false,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
