@@ -1,6 +1,7 @@
 {
   "name": "hello-containers",
   "compatibility_date": "2025-07-25",
+  "version": "1.0.0",
   "main": "src/index.ts",  // 确保引用了正确的主脚本
   "kv_namespaces": [
     {
