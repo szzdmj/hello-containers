@@ -1,13 +1,33 @@
 {
   "name": "hello-containers",
-  "compatibility_date": "2025-07-25",
-  "main": "src/index.ts",
-  "compatibility_flags": ["nodejs_compat"],
-
-  "containers": [
+  "compatibility_date": "2025-07-26",
+  "build": {
+    "command": "npm run build"
+  },
+  "migrations": [
     {
-      "binding": "MY_CONTAINER",        // used in your code (c.env.MY_CONTAINER)
-      "name": "shenzhou-appp",          // logical name (was missing!)
+      "tag": "v1",
+      "deleted_classes": ["MyContainer"]
+    }
+  ],
+  "env": {
+    "production": {
+      "account_id": "your-account-id",
+      "workers_dev": false,
+      "route": "your-route-url",
+      "zone_id": "your-zone-id"
+    },
+    "dev": {
+      "account_id": "your-account-id",
+      "workers_dev": true,
+      "route": "",
+      "zone_id": ""
+    }
+  },
+  "services": [
+    {
+      "binding": "MY_CONTAINER",
+      "service": "shenzhou-appp",
       "image": "szapp.szzd.me/up/shenzhou-app:tag"
     }
   ]
