@@ -1,9 +1,10 @@
 {
   "name": "hello-containers",
   "description": "Build a Container-enabled Worker",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "tsc",  // Add this line for TypeScript build
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
