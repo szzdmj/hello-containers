@@ -1,37 +1,37 @@
 {
-  "name": "hello-containers",
-  "compatibility_date": "2025-07-26",
+  "$schema": "node_modules/wrangler/config-schema.json",  // 这行可选，用于验证配置文件
+  "name": "hello-containers",  // Worker 名称，修改为你自己的 Worker 名称
+  "main": "src/index.ts",  // Worker 的入口文件
+  "compatibility_date": "2025-02-04",  // 兼容性日期，调整为你实际使用的日期
+  "observability": {
+    "enabled": true  // 启用观测能力
+  },
+ // 构建设置
   "build": {
-    "command": "npm run build"
+    "command": "npm run build"  // 构建命令
   },
-  "migrations": [
-    {
-      "tag": "v1",
-      "deleted_classes": ["MyContainer"]
-    }
-  ],
-  "env": {
-    "production": {
-      "account_id": "your-account-id",
-      "workers_dev": false,
-      "route": "your-route-url",
-      "zone_id": "your-zone-id"
-    },
-    "dev": {
-      "account_id": "your-account-id",
-      "workers_dev": true,
-      "route": "",
-      "zone_id": ""
-    }
-  },
+
+  // 服务配置
   "services": [
     {
-      "binding": "MY_CONTAINER",
-      "service": "shenzhou-appp",
-      "image": "szapp.szzd.me/up/shenzhou-app:tag"
+      "binding": "MY_CONTAINER",  // 绑定名称
+      "service": "shenzhou-appp",  // 服务名称
+      "image": "szapp.szzd.me/up/shenzhou-app:tag"  // 容器镜像
     }
   ],
+
+  // 静态资产配置
   "assets": {
-    "directory": "./dist"  // Replace with your actual build output directory
-  }
+    "directory": "./",  // 构建输出目录
+    "include": ["Caddyfile"]  // 包含 Caddyfile
+  },
+
+  // KV 存储绑定
+  "kv_namespaces": [
+    {
+      "binding": "KV",  // Worker 中用来引用 KV 存储的名称
+      "id": "afdb066fcc2146c0bab30d8ca805a7fc",  // 你的 KV 存储 ID
+      "preview_id": "<ID_OF_PREVIEW_KV_NAMESPACE_FOR_LOCAL_DEVELOPMENT>"  // 可选：本地开发的 KV 存储 ID
+    }
+  ]
 }
