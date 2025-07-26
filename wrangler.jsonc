@@ -11,5 +11,5 @@
       "service": "shenzhou-appp",   // Logical name for your container
       "image": "szapp.szzd.me/up/shenzhou-app:tag" // Use your actual image
     }
-   }
+   ]
 }
